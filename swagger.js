@@ -13,8 +13,12 @@ module.exports = {
             },
         },
         tags: [{
-            name: 'Notes'
-        }],
+                name: 'Notes'
+            },
+            {
+                name: 'Note'
+            }
+        ],
         paths: {
             "/notes": {
                 "get": openApi.getNotes
@@ -24,6 +28,12 @@ module.exports = {
             },
             "/note/update/{noteId}": {
                 "put": openApi.updateNote
+            },
+            "/note/delete/{noteId}": {
+                "delete": openApi.delNote
+            },
+            "/note/create": {
+                "post": openApi.delNote
             }
         }
     }

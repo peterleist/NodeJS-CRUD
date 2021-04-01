@@ -18,7 +18,5 @@ node server.js
 
 You can browse the apis at <http://localhost:3000>
 
-## Tutorial
-You can find the tutorial for this application at [The CalliCoder Blog](https://www.callicoder.com) - 
-
-<https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/>
+## Deploy
+API deployed: ec2-18-185-12-242.eu-central-1.compute.amazonaws.com:3000

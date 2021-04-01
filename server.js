@@ -1,5 +1,10 @@
 var express = require('express');
+const _ = require('lodash');
 var bodyParser = require('body-parser');
+const expressOasGenerator = require('express-oas-generator');
+const swaggerUi = require('swagger-ui-express')
+var swaggerSettings = require('./swagger')
+var Note = require('./app/models/note.model.js');
 
 // create express app
 var app = express();
@@ -28,10 +33,8 @@ mongoose.connection.once('open', function() {
     console.log("Successfully connected to the database");
 })
 
-// define a simple route
-app.get('/', function(req, res) {
-    res.json({ "message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes." });
-});
+
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSettings.swaggerDocument))
 
 require('./app/routes/note.routes.js')(app);
 
